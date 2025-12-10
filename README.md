@@ -12,7 +12,10 @@
 
 <sup>📧</sup> corresponding author | †Project Lead
 
+<a href="https://arxiv.org/abs/2512.07745"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b.svg" alt="arXiv"></a>
+<a href="https://huggingface.co/hustvl/DiffusionDriveV2"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue" alt="Hugging Face"></a>
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 
 
 
