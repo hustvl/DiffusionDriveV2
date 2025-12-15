@@ -70,13 +70,10 @@ DiffusionDrive is greatly inspired by the following outstanding contributions to
 If you find DiffusionDriveV2 is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 
 ```bibtex
-@misc{zou2025diffusiondrivev2reinforcementlearningconstrainedtruncated,
-      title={DiffusionDriveV2: Reinforcement Learning-Constrained Truncated Diffusion Modeling in End-to-End Autonomous Driving}, 
-      author={Jialv Zou and Shaoyu Chen and Bencheng Liao and Zhiyu Zheng and Yuehao Song and Lefei Zhang and Qian Zhang and Wenyu Liu and Xinggang Wang},
-      year={2025},
-      eprint={2512.07745},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2512.07745}, 
+@article{zou2025diffusiondrivev2,
+  title={DiffusionDriveV2: Reinforcement Learning-Constrained Truncated Diffusion Modeling in End-to-End Autonomous Driving},
+  author={Zou, Jialv and Chen, Shaoyu and Liao, Bencheng and Zheng, Zhiyu and Song, Yuehao and Zhang, Lefei and Zhang, Qian and Liu, Wenyu and Wang, Xinggang},
+  journal={arXiv preprint arXiv:2512.07745},
+  year={2025}
 }
 ```
