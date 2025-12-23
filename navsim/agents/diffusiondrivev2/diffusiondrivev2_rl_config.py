@@ -34,7 +34,7 @@ class TransfuserConfig:
     use_ground_plane: bool = False
 
     # new
-    num_groups : int = 64
+    num_groups : int = 4
     lidar_seq_len: int = 1
 
     camera_width: int = 1024
