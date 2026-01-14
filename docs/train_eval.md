@@ -35,7 +35,8 @@ python $NAVSIM_DEVKIT_ROOT/navsim/planning/script/run_training.py \
         trainer.params.max_epochs=10 \
         cache_path="${NAVSIM_EXP_ROOT}/training_cache/" \
         use_cache_without_dataset=True \
-        force_cache_computation=False
+        force_cache_computation=False \ 
+        +df_verssion=v2
 
 # Training mode selector
 python $NAVSIM_DEVKIT_ROOT/navsim/planning/script/run_training.py \
@@ -47,10 +48,25 @@ python $NAVSIM_DEVKIT_ROOT/navsim/planning/script/run_training.py \
         trainer.params.max_epochs=20 \
         cache_path="${NAVSIM_EXP_ROOT}/training_cache/" \
         use_cache_without_dataset=True \
-        force_cache_computation=False
+        force_cache_computation=False \
+        +df_verssion=v2
 
 ```
 
+if you want train DiffusionDrive v1, use this command
+```
+python $NAVSIM_DEVKIT_ROOT/navsim/planning/script/run_training.py \
+        agent=diffusiondrive_agent \
+        experiment_name=training_diffusiondrive_agent  \
+        train_test_split=mini \
+        split=mini\
+        trainer.params.max_epochs=100 \
+        cache_path="${NAVSIM_EXP_ROOT}/training_cache/" \
+        use_cache_without_dataset=True  \
+        force_cache_computation=False  \
+        +df_version=v1
+
+```
 
 ## 4. Evaluation
 Use the following command to evaluate the trained model rapidly (**several times faster than the official evaluation script**):
