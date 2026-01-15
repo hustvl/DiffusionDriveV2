@@ -30,14 +30,20 @@ def build_datasets(cfg: DictConfig, agent: AbstractAgent) -> Tuple[Dataset, Data
     train_scene_filter: SceneFilter = instantiate(cfg.train_test_split.scene_filter)
     if train_scene_filter.log_names is not None:
         train_scene_filter.log_names = [
-            log_name for log_name in train_scene_filter.log_names if log_name in cfg.train_logs
+            log_name
+            for log_name in train_scene_filter.log_names
+            if log_name in cfg.train_logs
         ]
     else:
         train_scene_filter.log_names = cfg.train_logs
 
     val_scene_filter: SceneFilter = instantiate(cfg.train_test_split.scene_filter)
     if val_scene_filter.log_names is not None:
-        val_scene_filter.log_names = [log_name for log_name in val_scene_filter.log_names if log_name in cfg.val_logs]
+        val_scene_filter.log_names = [
+            log_name
+            for log_name in val_scene_filter.log_names
+            if log_name in cfg.val_logs
+        ]
     else:
         val_scene_filter.log_names = cfg.val_logs
 
@@ -99,19 +105,21 @@ def main(cfg: DictConfig) -> None:
 
     if cfg.use_cache_without_dataset:
         logger.info("Using cached data without building SceneLoader")
-        assert (
-            not cfg.force_cache_computation
-        ), "force_cache_computation must be False when using cached data without building SceneLoader"
-        assert (
-            cfg.cache_path is not None
-        ), "cache_path must be provided when using cached data without building SceneLoader"
+        assert not cfg.force_cache_computation, (
+            "force_cache_computation must be False when using cached data without building SceneLoader"
+        )
+        assert cfg.cache_path is not None, (
+            "cache_path must be provided when using cached data without building SceneLoader"
+        )
         train_data = CacheOnlyDataset(
+            df_version=cfg.df_version,
             cache_path=cfg.cache_path,
             feature_builders=agent.get_feature_builders(),
             target_builders=agent.get_target_builders(),
             log_names=cfg.train_logs,
         )
         val_data = CacheOnlyDataset(
+            df_version=cfg.df_version,
             cache_path=cfg.cache_path,
             feature_builders=agent.get_feature_builders(),
             target_builders=agent.get_target_builders(),
